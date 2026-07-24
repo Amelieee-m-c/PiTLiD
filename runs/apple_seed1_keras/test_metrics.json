@@ -1,0 +1,40 @@
+{
+  "accuracy": 0.9960629921259843,
+  "precision_macro": 0.9955239273927393,
+  "recall_sensitivity_macro": 0.9937841530054645,
+  "f1_macro": 0.9946147139817592,
+  "confusion_matrix": [
+    [
+      295,
+      4,
+      0,
+      1
+    ],
+    [
+      0,
+      295,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      121,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      807
+    ]
+  ],
+  "class_names": [
+    "Apple___Apple_scab",
+    "Apple___Black_rot",
+    "Apple___Cedar_apple_rust",
+    "Apple___healthy"
+  ],
+  "classification_report": "                          precision    recall  f1-score   support\n\n      Apple___Apple_scab     1.0000    0.9833    0.9916       300\n       Apple___Black_rot     0.9833    1.0000    0.9916       295\nApple___Cedar_apple_rust     1.0000    0.9918    0.9959       122\n         Apple___healthy     0.9988    1.0000    0.9994       807\n\n                accuracy                         0.9961      1524\n               macro avg     0.9955    0.9938    0.9946      1524\n            weighted avg     0.9961    0.9961    0.9961      1524\n",
+  "stopped_epoch": 49
+}

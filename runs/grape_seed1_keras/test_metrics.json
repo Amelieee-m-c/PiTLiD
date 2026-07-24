@@ -1,0 +1,40 @@
+{
+  "accuracy": 0.9908629441624366,
+  "precision_macro": 0.9931280476792487,
+  "recall_sensitivity_macro": 0.9924337535374325,
+  "f1_macro": 0.9927486668212381,
+  "confusion_matrix": [
+    [
+      561,
+      14,
+      0,
+      0
+    ],
+    [
+      4,
+      672,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      523,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      196
+    ]
+  ],
+  "class_names": [
+    "Grape___Black_rot",
+    "Grape___Esca_(Black_Measles)",
+    "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+    "Grape___healthy"
+  ],
+  "classification_report": "                                            precision    recall  f1-score   support\n\n                         Grape___Black_rot     0.9929    0.9757    0.9842       575\n              Grape___Esca_(Black_Measles)     0.9796    0.9941    0.9868       676\nGrape___Leaf_blight_(Isariopsis_Leaf_Spot)     1.0000    1.0000    1.0000       523\n                           Grape___healthy     1.0000    1.0000    1.0000       196\n\n                                  accuracy                         0.9909      1970\n                                 macro avg     0.9931    0.9924    0.9927      1970\n                              weighted avg     0.9909    0.9909    0.9909      1970\n",
+  "stopped_epoch": 50
+}

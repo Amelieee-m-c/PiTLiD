@@ -1,0 +1,683 @@
+seed=1  output=..\runs\apple_10run\seed_1\split
+class                           train    val   test
+Apple___Apple_scab                 30    300    300
+Apple___Black_rot                  30    296    295
+Apple___Cedar_apple_rust           30    123    122
+Apple___healthy                    30    808    807
+classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy']
+train=120 val=1527 test=1524
+epoch 1/50  train_loss=1.3790 train_acc=0.3036  val_loss=1.2168 val_acc=0.3589
+epoch 2/50  train_loss=0.5605 train_acc=0.7731  val_loss=2.4881 val_acc=0.4512
+epoch 3/50  train_loss=0.3344 train_acc=0.8905  val_loss=7.1616 val_acc=0.5272
+epoch 4/50  train_loss=0.2145 train_acc=0.9275  val_loss=4.5781 val_acc=0.4597
+epoch 5/50  train_loss=0.1311 train_acc=0.9613  val_loss=0.2373 val_acc=0.9273
+epoch 6/50  train_loss=0.1133 train_acc=0.9620  val_loss=0.2381 val_acc=0.9188
+epoch 7/50  train_loss=0.1067 train_acc=0.9655  val_loss=0.1656 val_acc=0.9502
+epoch 8/50  train_loss=0.0951 train_acc=0.9712  val_loss=4.2159 val_acc=0.5396
+epoch 9/50  train_loss=0.1227 train_acc=0.9661  val_loss=0.4804 val_acc=0.8540
+epoch 10/50  train_loss=0.0912 train_acc=0.9709  val_loss=0.1935 val_acc=0.9345
+epoch 11/50  train_loss=0.1270 train_acc=0.9666  val_loss=0.1025 val_acc=0.9620
+epoch 12/50  train_loss=0.0563 train_acc=0.9842  val_loss=0.1175 val_acc=0.9646
+epoch 13/50  train_loss=0.0803 train_acc=0.9794  val_loss=1.4005 val_acc=0.5737
+epoch 14/50  train_loss=0.0325 train_acc=0.9906  val_loss=0.2897 val_acc=0.9267
+epoch 15/50  train_loss=0.0421 train_acc=0.9880  val_loss=0.0676 val_acc=0.9777
+epoch 16/50  train_loss=0.0327 train_acc=0.9897  val_loss=0.1174 val_acc=0.9699
+epoch 17/50  train_loss=0.0079 train_acc=0.9981  val_loss=0.0731 val_acc=0.9797
+epoch 18/50  train_loss=0.0301 train_acc=0.9908  val_loss=0.1026 val_acc=0.9738
+epoch 19/50  train_loss=0.0095 train_acc=0.9967  val_loss=0.0429 val_acc=0.9862
+epoch 20/50  train_loss=0.0055 train_acc=0.9986  val_loss=0.0517 val_acc=0.9856
+epoch 21/50  train_loss=0.0054 train_acc=0.9984  val_loss=0.0506 val_acc=0.9876
+epoch 22/50  train_loss=0.0108 train_acc=0.9966  val_loss=0.0969 val_acc=0.9751
+epoch 23/50  train_loss=0.0071 train_acc=0.9984  val_loss=1.6718 val_acc=0.6601
+epoch 24/50  train_loss=0.0146 train_acc=0.9959  val_loss=0.0520 val_acc=0.9856
+epoch 25/50  train_loss=0.0137 train_acc=0.9962  val_loss=0.0865 val_acc=0.9777
+epoch 26/50  train_loss=0.0213 train_acc=0.9933  val_loss=0.0715 val_acc=0.9771
+epoch 27/50  train_loss=0.0217 train_acc=0.9941  val_loss=0.2290 val_acc=0.9424
+epoch 28/50  train_loss=0.0178 train_acc=0.9945  val_loss=0.1225 val_acc=0.9673
+epoch 29/50  train_loss=0.0262 train_acc=0.9927  val_loss=0.0551 val_acc=0.9830
+epoch 30/50  train_loss=0.0265 train_acc=0.9928  val_loss=0.7035 val_acc=0.8795
+epoch 31/50  train_loss=0.0314 train_acc=0.9906  val_loss=0.1159 val_acc=0.9607
+epoch 32/50  train_loss=0.0142 train_acc=0.9961  val_loss=0.0358 val_acc=0.9902
+epoch 33/50  train_loss=0.0393 train_acc=0.9911  val_loss=0.0683 val_acc=0.9777
+epoch 34/50  train_loss=0.0118 train_acc=0.9966  val_loss=0.0927 val_acc=0.9777
+epoch 35/50  train_loss=0.0124 train_acc=0.9975  val_loss=0.0503 val_acc=0.9849
+epoch 36/50  train_loss=0.0068 train_acc=0.9988  val_loss=0.0365 val_acc=0.9895
+epoch 37/50  train_loss=0.0089 train_acc=0.9966  val_loss=0.0553 val_acc=0.9817
+epoch 38/50  train_loss=0.0085 train_acc=0.9972  val_loss=0.2396 val_acc=0.9371
+epoch 39/50  train_loss=0.0037 train_acc=0.9991  val_loss=0.0608 val_acc=0.9823
+epoch 40/50  train_loss=0.0052 train_acc=0.9991  val_loss=0.0525 val_acc=0.9862
+epoch 41/50  train_loss=0.0046 train_acc=0.9989  val_loss=0.0447 val_acc=0.9895
+epoch 42/50  train_loss=0.0038 train_acc=0.9992  val_loss=0.0458 val_acc=0.9902
+epoch 43/50  train_loss=0.0071 train_acc=0.9983  val_loss=0.0495 val_acc=0.9889
+epoch 44/50  train_loss=0.0061 train_acc=0.9981  val_loss=0.0686 val_acc=0.9790
+epoch 45/50  train_loss=0.0084 train_acc=0.9977  val_loss=0.1482 val_acc=0.9561
+epoch 46/50  train_loss=0.0051 train_acc=0.9989  val_loss=0.0525 val_acc=0.9856
+early stopping at epoch 46 (no val_loss improvement for 14 epochs)
+
+=== Test set results ===
+accuracy:  0.9875
+precision (macro): 0.9870
+recall/sensitivity (macro): 0.9835
+f1 (macro): 0.9851
+                          precision    recall  f1-score   support
+
+      Apple___Apple_scab     0.9609    0.9833    0.9720       300
+       Apple___Black_rot     0.9932    0.9932    0.9932       295
+Apple___Cedar_apple_rust     1.0000    0.9672    0.9833       122
+         Apple___healthy     0.9938    0.9901    0.9919       807
+
+                accuracy                         0.9875      1524
+               macro avg     0.9870    0.9835    0.9851      1524
+            weighted avg     0.9877    0.9875    0.9876      1524
+
+
+saved: ..\runs\apple_10run\seed_1/best_model.pt, history.json, accuracy_loss.png, confusion_matrix.png, test_metrics.json
+seed=2  output=..\runs\apple_10run\seed_2\split
+class                           train    val   test
+Apple___Apple_scab                 30    300    300
+Apple___Black_rot                  30    296    295
+Apple___Cedar_apple_rust           30    123    122
+Apple___healthy                    30    808    807
+classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy']
+train=120 val=1527 test=1524
+epoch 1/50  train_loss=1.0198 train_acc=0.5369  val_loss=1.2096 val_acc=0.5278
+epoch 2/50  train_loss=0.2845 train_acc=0.9070  val_loss=0.7679 val_acc=0.8494
+epoch 3/50  train_loss=0.2330 train_acc=0.9313  val_loss=0.1951 val_acc=0.9371
+epoch 4/50  train_loss=0.1392 train_acc=0.9570  val_loss=0.6201 val_acc=0.8664
+epoch 5/50  train_loss=0.2092 train_acc=0.9455  val_loss=414.1274 val_acc=0.1958
+epoch 6/50  train_loss=0.2775 train_acc=0.9059  val_loss=0.0854 val_acc=0.9725
+epoch 7/50  train_loss=0.1687 train_acc=0.9511  val_loss=0.3105 val_acc=0.8893
+epoch 8/50  train_loss=0.1921 train_acc=0.9416  val_loss=2.5868 val_acc=0.2705
+epoch 9/50  train_loss=0.1658 train_acc=0.9533  val_loss=1.6357 val_acc=0.4709
+epoch 10/50  train_loss=0.1792 train_acc=0.9406  val_loss=0.0798 val_acc=0.9771
+epoch 11/50  train_loss=0.1727 train_acc=0.9477  val_loss=0.0646 val_acc=0.9784
+epoch 12/50  train_loss=0.0820 train_acc=0.9766  val_loss=0.0261 val_acc=0.9921
+epoch 13/50  train_loss=0.0867 train_acc=0.9806  val_loss=0.5558 val_acc=0.8513
+epoch 14/50  train_loss=0.0563 train_acc=0.9817  val_loss=0.1992 val_acc=0.9325
+epoch 15/50  train_loss=0.0465 train_acc=0.9848  val_loss=0.2729 val_acc=0.9247
+epoch 16/50  train_loss=0.0177 train_acc=0.9952  val_loss=0.0405 val_acc=0.9889
+epoch 17/50  train_loss=0.0209 train_acc=0.9939  val_loss=0.0402 val_acc=0.9902
+epoch 18/50  train_loss=0.0138 train_acc=0.9966  val_loss=2.4167 val_acc=0.6785
+epoch 19/50  train_loss=0.0095 train_acc=0.9972  val_loss=0.0560 val_acc=0.9856
+epoch 20/50  train_loss=0.0072 train_acc=0.9978  val_loss=0.0636 val_acc=0.9804
+epoch 21/50  train_loss=0.0042 train_acc=0.9989  val_loss=0.0634 val_acc=0.9843
+epoch 22/50  train_loss=0.0082 train_acc=0.9975  val_loss=0.0692 val_acc=0.9758
+epoch 23/50  train_loss=0.0117 train_acc=0.9967  val_loss=0.0678 val_acc=0.9823
+epoch 24/50  train_loss=0.0077 train_acc=0.9975  val_loss=0.0864 val_acc=0.9718
+epoch 25/50  train_loss=0.0310 train_acc=0.9934  val_loss=3.7489 val_acc=0.5062
+epoch 26/50  train_loss=0.0160 train_acc=0.9948  val_loss=0.0322 val_acc=0.9902
+early stopping at epoch 26 (no val_loss improvement for 14 epochs)
+
+=== Test set results ===
+accuracy:  0.9875
+precision (macro): 0.9862
+recall/sensitivity (macro): 0.9763
+f1 (macro): 0.9808
+                          precision    recall  f1-score   support
+
+      Apple___Apple_scab     0.9551    0.9933    0.9739       300
+       Apple___Black_rot     0.9932    0.9932    0.9932       295
+Apple___Cedar_apple_rust     1.0000    0.9262    0.9617       122
+         Apple___healthy     0.9963    0.9926    0.9944       807
+
+                accuracy                         0.9875      1524
+               macro avg     0.9862    0.9763    0.9808      1524
+            weighted avg     0.9879    0.9875    0.9875      1524
+
+
+saved: ..\runs\apple_10run\seed_2/best_model.pt, history.json, accuracy_loss.png, confusion_matrix.png, test_metrics.json
+seed=3  output=..\runs\apple_10run\seed_3\split
+class                           train    val   test
+Apple___Apple_scab                 30    300    300
+Apple___Black_rot                  30    296    295
+Apple___Cedar_apple_rust           30    123    122
+Apple___healthy                    30    808    807
+classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy']
+train=120 val=1527 test=1524
+epoch 1/50  train_loss=1.3788 train_acc=0.3152  val_loss=2.5817 val_acc=0.5527
+epoch 2/50  train_loss=0.4626 train_acc=0.8314  val_loss=0.8518 val_acc=0.6686
+epoch 3/50  train_loss=0.2534 train_acc=0.9217  val_loss=0.8802 val_acc=0.7525
+epoch 4/50  train_loss=0.1980 train_acc=0.9398  val_loss=0.8400 val_acc=0.7701
+epoch 5/50  train_loss=0.1379 train_acc=0.9597  val_loss=1056561.9474 val_acc=0.1938
+epoch 6/50  train_loss=0.2363 train_acc=0.9256  val_loss=0.1534 val_acc=0.9561
+epoch 7/50  train_loss=0.1183 train_acc=0.9645  val_loss=0.2057 val_acc=0.9208
+epoch 8/50  train_loss=0.1268 train_acc=0.9650  val_loss=0.1649 val_acc=0.9365
+epoch 9/50  train_loss=0.1096 train_acc=0.9656  val_loss=0.1882 val_acc=0.9352
+epoch 10/50  train_loss=0.1451 train_acc=0.9619  val_loss=0.3961 val_acc=0.8599
+epoch 11/50  train_loss=0.0761 train_acc=0.9770  val_loss=0.0570 val_acc=0.9810
+epoch 12/50  train_loss=0.0594 train_acc=0.9822  val_loss=0.2833 val_acc=0.8991
+epoch 13/50  train_loss=0.0507 train_acc=0.9847  val_loss=0.2495 val_acc=0.9122
+epoch 14/50  train_loss=0.0510 train_acc=0.9841  val_loss=0.1496 val_acc=0.9522
+epoch 15/50  train_loss=0.0423 train_acc=0.9875  val_loss=0.0807 val_acc=0.9777
+epoch 16/50  train_loss=0.0186 train_acc=0.9942  val_loss=0.0860 val_acc=0.9725
+epoch 17/50  train_loss=0.0159 train_acc=0.9944  val_loss=0.0936 val_acc=0.9738
+epoch 18/50  train_loss=0.0120 train_acc=0.9967  val_loss=0.1260 val_acc=0.9601
+epoch 19/50  train_loss=0.0136 train_acc=0.9959  val_loss=0.0497 val_acc=0.9862
+epoch 20/50  train_loss=0.0051 train_acc=0.9986  val_loss=0.0398 val_acc=0.9856
+epoch 21/50  train_loss=0.0054 train_acc=0.9984  val_loss=0.0387 val_acc=0.9856
+epoch 22/50  train_loss=0.0135 train_acc=0.9975  val_loss=0.1588 val_acc=0.9555
+epoch 23/50  train_loss=0.0074 train_acc=0.9977  val_loss=0.0542 val_acc=0.9810
+epoch 24/50  train_loss=0.0088 train_acc=0.9970  val_loss=0.2054 val_acc=0.9476
+epoch 25/50  train_loss=0.0147 train_acc=0.9958  val_loss=0.0510 val_acc=0.9836
+epoch 26/50  train_loss=0.0104 train_acc=0.9972  val_loss=0.7970 val_acc=0.8396
+epoch 27/50  train_loss=0.0167 train_acc=0.9952  val_loss=0.0466 val_acc=0.9836
+epoch 28/50  train_loss=0.0329 train_acc=0.9898  val_loss=0.1064 val_acc=0.9614
+epoch 29/50  train_loss=0.0201 train_acc=0.9938  val_loss=0.3143 val_acc=0.9142
+epoch 30/50  train_loss=0.0307 train_acc=0.9892  val_loss=0.0697 val_acc=0.9797
+epoch 31/50  train_loss=0.0109 train_acc=0.9966  val_loss=0.0541 val_acc=0.9836
+epoch 32/50  train_loss=0.0242 train_acc=0.9938  val_loss=2.6012 val_acc=0.7020
+epoch 33/50  train_loss=0.0203 train_acc=0.9939  val_loss=0.3419 val_acc=0.8998
+epoch 34/50  train_loss=0.0262 train_acc=0.9922  val_loss=0.0483 val_acc=0.9849
+epoch 35/50  train_loss=0.0088 train_acc=0.9978  val_loss=0.0480 val_acc=0.9804
+early stopping at epoch 35 (no val_loss improvement for 14 epochs)
+
+=== Test set results ===
+accuracy:  0.9882
+precision (macro): 0.9846
+recall/sensitivity (macro): 0.9875
+f1 (macro): 0.9859
+                          precision    recall  f1-score   support
+
+      Apple___Apple_scab     0.9803    0.9933    0.9868       300
+       Apple___Black_rot     0.9895    0.9627    0.9759       295
+Apple___Cedar_apple_rust     0.9760    1.0000    0.9879       122
+         Apple___healthy     0.9926    0.9938    0.9932       807
+
+                accuracy                         0.9882      1524
+               macro avg     0.9846    0.9875    0.9859      1524
+            weighted avg     0.9882    0.9882    0.9882      1524
+
+
+saved: ..\runs\apple_10run\seed_3/best_model.pt, history.json, accuracy_loss.png, confusion_matrix.png, test_metrics.json
+seed=4  output=..\runs\apple_10run\seed_4\split
+class                           train    val   test
+Apple___Apple_scab                 30    300    300
+Apple___Black_rot                  30    296    295
+Apple___Cedar_apple_rust           30    123    122
+Apple___healthy                    30    808    807
+classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy']
+train=120 val=1527 test=1524
+epoch 1/50  train_loss=1.2976 train_acc=0.3656  val_loss=1.2608 val_acc=0.6051
+epoch 2/50  train_loss=0.5639 train_acc=0.7598  val_loss=0.2231 val_acc=0.9221
+epoch 3/50  train_loss=0.3620 train_acc=0.8758  val_loss=6.8399 val_acc=0.6058
+epoch 4/50  train_loss=0.2653 train_acc=0.9145  val_loss=0.2308 val_acc=0.9181
+epoch 5/50  train_loss=0.1468 train_acc=0.9566  val_loss=2.4659 val_acc=0.7119
+epoch 6/50  train_loss=0.1231 train_acc=0.9670  val_loss=0.0578 val_acc=0.9823
+epoch 7/50  train_loss=0.2220 train_acc=0.9394  val_loss=0.1749 val_acc=0.9391
+epoch 8/50  train_loss=0.1229 train_acc=0.9683  val_loss=0.0923 val_acc=0.9764
+epoch 9/50  train_loss=0.0964 train_acc=0.9738  val_loss=0.1173 val_acc=0.9614
+epoch 10/50  train_loss=0.1647 train_acc=0.9486  val_loss=0.3801 val_acc=0.8788
+epoch 11/50  train_loss=0.1195 train_acc=0.9678  val_loss=0.0722 val_acc=0.9790
+epoch 12/50  train_loss=0.0695 train_acc=0.9794  val_loss=0.1164 val_acc=0.9679
+epoch 13/50  train_loss=0.0541 train_acc=0.9847  val_loss=0.0569 val_acc=0.9804
+epoch 14/50  train_loss=0.0586 train_acc=0.9827  val_loss=0.4714 val_acc=0.8854
+epoch 15/50  train_loss=0.0360 train_acc=0.9897  val_loss=0.1184 val_acc=0.9731
+epoch 16/50  train_loss=0.0186 train_acc=0.9948  val_loss=0.3192 val_acc=0.9299
+epoch 17/50  train_loss=0.0311 train_acc=0.9917  val_loss=1.1249 val_acc=0.7872
+epoch 18/50  train_loss=0.0139 train_acc=0.9962  val_loss=0.0730 val_acc=0.9830
+epoch 19/50  train_loss=0.0127 train_acc=0.9961  val_loss=0.0783 val_acc=0.9836
+epoch 20/50  train_loss=0.0142 train_acc=0.9959  val_loss=0.0723 val_acc=0.9830
+epoch 21/50  train_loss=0.0093 train_acc=0.9970  val_loss=0.0608 val_acc=0.9843
+epoch 22/50  train_loss=0.0073 train_acc=0.9980  val_loss=0.0646 val_acc=0.9817
+epoch 23/50  train_loss=0.0138 train_acc=0.9970  val_loss=0.0887 val_acc=0.9771
+epoch 24/50  train_loss=0.0199 train_acc=0.9933  val_loss=0.0540 val_acc=0.9843
+epoch 25/50  train_loss=0.0320 train_acc=0.9920  val_loss=0.0691 val_acc=0.9830
+epoch 26/50  train_loss=0.0074 train_acc=0.9981  val_loss=0.2804 val_acc=0.9234
+epoch 27/50  train_loss=0.0246 train_acc=0.9930  val_loss=0.1457 val_acc=0.9502
+epoch 28/50  train_loss=0.0192 train_acc=0.9945  val_loss=0.1136 val_acc=0.9705
+epoch 29/50  train_loss=0.0387 train_acc=0.9905  val_loss=0.0928 val_acc=0.9790
+epoch 30/50  train_loss=0.0102 train_acc=0.9966  val_loss=0.3416 val_acc=0.9214
+epoch 31/50  train_loss=0.0239 train_acc=0.9930  val_loss=0.7803 val_acc=0.8690
+epoch 32/50  train_loss=0.0267 train_acc=0.9908  val_loss=0.2910 val_acc=0.9358
+epoch 33/50  train_loss=0.0214 train_acc=0.9934  val_loss=0.0585 val_acc=0.9823
+epoch 34/50  train_loss=0.0130 train_acc=0.9969  val_loss=0.0616 val_acc=0.9830
+epoch 35/50  train_loss=0.0135 train_acc=0.9964  val_loss=0.0607 val_acc=0.9830
+epoch 36/50  train_loss=0.0104 train_acc=0.9973  val_loss=0.1266 val_acc=0.9679
+epoch 37/50  train_loss=0.0097 train_acc=0.9973  val_loss=0.0473 val_acc=0.9889
+epoch 38/50  train_loss=0.0045 train_acc=0.9991  val_loss=0.0443 val_acc=0.9908
+epoch 39/50  train_loss=0.0058 train_acc=0.9984  val_loss=0.0280 val_acc=0.9908
+epoch 40/50  train_loss=0.0039 train_acc=0.9992  val_loss=0.0454 val_acc=0.9862
+epoch 41/50  train_loss=0.0046 train_acc=0.9989  val_loss=0.0677 val_acc=0.9790
+epoch 42/50  train_loss=0.0048 train_acc=0.9989  val_loss=0.0404 val_acc=0.9856
+epoch 43/50  train_loss=0.0062 train_acc=0.9981  val_loss=0.1226 val_acc=0.9679
+epoch 44/50  train_loss=0.0055 train_acc=0.9988  val_loss=0.0472 val_acc=0.9876
+epoch 45/50  train_loss=0.0061 train_acc=0.9978  val_loss=0.0475 val_acc=0.9876
+epoch 46/50  train_loss=0.0071 train_acc=0.9981  val_loss=0.1266 val_acc=0.9627
+epoch 47/50  train_loss=0.0112 train_acc=0.9962  val_loss=4.1949 val_acc=0.6771
+epoch 48/50  train_loss=0.0068 train_acc=0.9984  val_loss=0.0634 val_acc=0.9830
+epoch 49/50  train_loss=0.0113 train_acc=0.9969  val_loss=0.0325 val_acc=0.9902
+epoch 50/50  train_loss=0.0144 train_acc=0.9947  val_loss=0.3050 val_acc=0.9149
+
+=== Test set results ===
+accuracy:  0.9908
+precision (macro): 0.9880
+recall/sensitivity (macro): 0.9873
+f1 (macro): 0.9876
+                          precision    recall  f1-score   support
+
+      Apple___Apple_scab     0.9801    0.9833    0.9817       300
+       Apple___Black_rot     0.9932    0.9966    0.9949       295
+Apple___Cedar_apple_rust     0.9835    0.9754    0.9794       122
+         Apple___healthy     0.9950    0.9938    0.9944       807
+
+                accuracy                         0.9908      1524
+               macro avg     0.9880    0.9873    0.9876      1524
+            weighted avg     0.9908    0.9908    0.9908      1524
+
+
+saved: ..\runs\apple_10run\seed_4/best_model.pt, history.json, accuracy_loss.png, confusion_matrix.png, test_metrics.json
+seed=5  output=..\runs\apple_10run\seed_5\split
+class                           train    val   test
+Apple___Apple_scab                 30    300    300
+Apple___Black_rot                  30    296    295
+Apple___Cedar_apple_rust           30    123    122
+Apple___healthy                    30    808    807
+classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy']
+train=120 val=1527 test=1524
+epoch 1/50  train_loss=1.2446 train_acc=0.4169  val_loss=0.9484 val_acc=0.6830
+epoch 2/50  train_loss=0.5057 train_acc=0.8061  val_loss=0.3967 val_acc=0.8625
+epoch 3/50  train_loss=0.2276 train_acc=0.9294  val_loss=1.1698 val_acc=0.6713
+epoch 4/50  train_loss=0.1552 train_acc=0.9502  val_loss=0.0942 val_acc=0.9679
+epoch 5/50  train_loss=0.1927 train_acc=0.9525  val_loss=0.0511 val_acc=0.9895
+epoch 6/50  train_loss=0.2118 train_acc=0.9386  val_loss=8.3083 val_acc=0.0995
+epoch 7/50  train_loss=0.1081 train_acc=0.9669  val_loss=0.0813 val_acc=0.9725
+epoch 8/50  train_loss=0.1304 train_acc=0.9634  val_loss=0.5756 val_acc=0.8376
+epoch 9/50  train_loss=0.1041 train_acc=0.9717  val_loss=0.2201 val_acc=0.9260
+epoch 10/50  train_loss=0.0885 train_acc=0.9736  val_loss=0.3844 val_acc=0.8919
+epoch 11/50  train_loss=0.0754 train_acc=0.9752  val_loss=0.1062 val_acc=0.9692
+epoch 12/50  train_loss=0.0670 train_acc=0.9831  val_loss=0.0928 val_acc=0.9692
+epoch 13/50  train_loss=0.0481 train_acc=0.9878  val_loss=0.0865 val_acc=0.9738
+epoch 14/50  train_loss=0.0346 train_acc=0.9892  val_loss=0.0816 val_acc=0.9784
+epoch 15/50  train_loss=0.0243 train_acc=0.9927  val_loss=0.0606 val_acc=0.9823
+epoch 16/50  train_loss=0.0225 train_acc=0.9928  val_loss=0.0859 val_acc=0.9764
+epoch 17/50  train_loss=0.0209 train_acc=0.9938  val_loss=0.1060 val_acc=0.9725
+epoch 18/50  train_loss=0.0078 train_acc=0.9980  val_loss=0.0529 val_acc=0.9869
+epoch 19/50  train_loss=0.0053 train_acc=0.9989  val_loss=0.0511 val_acc=0.9876
+early stopping at epoch 19 (no val_loss improvement for 14 epochs)
+
+=== Test set results ===
+accuracy:  0.9895
+precision (macro): 0.9912
+recall/sensitivity (macro): 0.9882
+f1 (macro): 0.9896
+                          precision    recall  f1-score   support
+
+      Apple___Apple_scab     0.9931    0.9633    0.9780       300
+       Apple___Black_rot     0.9932    0.9932    0.9932       295
+Apple___Cedar_apple_rust     0.9919    1.0000    0.9959       122
+         Apple___healthy     0.9865    0.9963    0.9914       807
+
+                accuracy                         0.9895      1524
+               macro avg     0.9912    0.9882    0.9896      1524
+            weighted avg     0.9895    0.9895    0.9895      1524
+
+
+saved: ..\runs\apple_10run\seed_5/best_model.pt, history.json, accuracy_loss.png, confusion_matrix.png, test_metrics.json
+seed=6  output=..\runs\apple_10run\seed_6\split
+class                           train    val   test
+Apple___Apple_scab                 30    300    300
+Apple___Black_rot                  30    296    295
+Apple___Cedar_apple_rust           30    123    122
+Apple___healthy                    30    808    807
+classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy']
+train=120 val=1527 test=1524
+epoch 1/50  train_loss=1.2509 train_acc=0.3970  val_loss=0.9922 val_acc=0.6654
+epoch 2/50  train_loss=0.5665 train_acc=0.7720  val_loss=2.6951 val_acc=0.4833
+epoch 3/50  train_loss=0.2570 train_acc=0.9095  val_loss=1.2880 val_acc=0.6012
+epoch 4/50  train_loss=0.2835 train_acc=0.9091  val_loss=0.6449 val_acc=0.8134
+epoch 5/50  train_loss=0.1607 train_acc=0.9505  val_loss=0.3349 val_acc=0.9011
+epoch 6/50  train_loss=0.1448 train_acc=0.9567  val_loss=1.0058 val_acc=0.8094
+epoch 7/50  train_loss=0.1202 train_acc=0.9648  val_loss=0.0771 val_acc=0.9823
+epoch 8/50  train_loss=0.1637 train_acc=0.9484  val_loss=0.0813 val_acc=0.9751
+epoch 9/50  train_loss=0.1471 train_acc=0.9520  val_loss=231.9433 val_acc=0.2155
+epoch 10/50  train_loss=0.1575 train_acc=0.9519  val_loss=0.1352 val_acc=0.9587
+epoch 11/50  train_loss=0.0817 train_acc=0.9784  val_loss=0.1352 val_acc=0.9627
+epoch 12/50  train_loss=0.0527 train_acc=0.9839  val_loss=0.3786 val_acc=0.9103
+epoch 13/50  train_loss=0.0604 train_acc=0.9823  val_loss=0.0834 val_acc=0.9777
+epoch 14/50  train_loss=0.0330 train_acc=0.9905  val_loss=0.0901 val_acc=0.9751
+epoch 15/50  train_loss=0.0342 train_acc=0.9903  val_loss=0.1594 val_acc=0.9718
+epoch 16/50  train_loss=0.0271 train_acc=0.9920  val_loss=0.1660 val_acc=0.9646
+epoch 17/50  train_loss=0.0168 train_acc=0.9956  val_loss=0.0883 val_acc=0.9810
+epoch 18/50  train_loss=0.0127 train_acc=0.9969  val_loss=0.0722 val_acc=0.9823
+epoch 19/50  train_loss=0.0056 train_acc=0.9984  val_loss=0.0616 val_acc=0.9843
+epoch 20/50  train_loss=0.0033 train_acc=0.9994  val_loss=0.0813 val_acc=0.9830
+epoch 21/50  train_loss=0.0066 train_acc=0.9977  val_loss=0.2012 val_acc=0.9633
+epoch 22/50  train_loss=0.0100 train_acc=0.9970  val_loss=0.1221 val_acc=0.9725
+epoch 23/50  train_loss=0.0053 train_acc=0.9984  val_loss=0.2584 val_acc=0.9411
+epoch 24/50  train_loss=0.0093 train_acc=0.9975  val_loss=0.0895 val_acc=0.9843
+epoch 25/50  train_loss=0.0216 train_acc=0.9948  val_loss=0.1633 val_acc=0.9686
+epoch 26/50  train_loss=0.0123 train_acc=0.9959  val_loss=0.6880 val_acc=0.9221
+epoch 27/50  train_loss=0.0097 train_acc=0.9973  val_loss=1.8932 val_acc=0.6902
+epoch 28/50  train_loss=0.0152 train_acc=0.9947  val_loss=0.1081 val_acc=0.9751
+epoch 29/50  train_loss=0.0216 train_acc=0.9953  val_loss=0.1069 val_acc=0.9738
+epoch 30/50  train_loss=0.0339 train_acc=0.9931  val_loss=0.0978 val_acc=0.9745
+epoch 31/50  train_loss=0.0148 train_acc=0.9961  val_loss=0.0820 val_acc=0.9823
+epoch 32/50  train_loss=0.0118 train_acc=0.9972  val_loss=0.0866 val_acc=0.9804
+epoch 33/50  train_loss=0.0164 train_acc=0.9967  val_loss=0.1573 val_acc=0.9614
+early stopping at epoch 33 (no val_loss improvement for 14 epochs)
+
+=== Test set results ===
+accuracy:  0.9875
+precision (macro): 0.9843
+recall/sensitivity (macro): 0.9847
+f1 (macro): 0.9842
+                          precision    recall  f1-score   support
+
+      Apple___Apple_scab     1.0000    0.9467    0.9726       300
+       Apple___Black_rot     0.9799    0.9932    0.9865       295
+Apple___Cedar_apple_rust     0.9683    1.0000    0.9839       122
+         Apple___healthy     0.9890    0.9988    0.9938       807
+
+                accuracy                         0.9875      1524
+               macro avg     0.9843    0.9847    0.9842      1524
+            weighted avg     0.9877    0.9875    0.9874      1524
+
+
+saved: ..\runs\apple_10run\seed_6/best_model.pt, history.json, accuracy_loss.png, confusion_matrix.png, test_metrics.json
+seed=7  output=..\runs\apple_10run\seed_7\split
+class                           train    val   test
+Apple___Apple_scab                 30    300    300
+Apple___Black_rot                  30    296    295
+Apple___Cedar_apple_rust           30    123    122
+Apple___healthy                    30    808    807
+classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy']
+train=120 val=1527 test=1524
+epoch 1/50  train_loss=1.1341 train_acc=0.4903  val_loss=0.9490 val_acc=0.7361
+epoch 2/50  train_loss=0.3637 train_acc=0.8738  val_loss=0.8239 val_acc=0.6654
+epoch 3/50  train_loss=0.2339 train_acc=0.9220  val_loss=1.8475 val_acc=0.7734
+epoch 4/50  train_loss=0.2591 train_acc=0.9167  val_loss=18.8539 val_acc=0.1938
+epoch 5/50  train_loss=0.1884 train_acc=0.9422  val_loss=0.1672 val_acc=0.9496
+epoch 6/50  train_loss=0.1669 train_acc=0.9519  val_loss=4.0188 val_acc=0.5979
+epoch 7/50  train_loss=0.0976 train_acc=0.9720  val_loss=0.0856 val_acc=0.9692
+epoch 8/50  train_loss=0.1646 train_acc=0.9542  val_loss=0.0679 val_acc=0.9784
+epoch 9/50  train_loss=0.1058 train_acc=0.9669  val_loss=0.0595 val_acc=0.9817
+epoch 10/50  train_loss=0.2892 train_acc=0.9038  val_loss=0.2451 val_acc=0.9142
+epoch 11/50  train_loss=0.1316 train_acc=0.9570  val_loss=0.1130 val_acc=0.9574
+epoch 12/50  train_loss=0.0757 train_acc=0.9766  val_loss=0.1297 val_acc=0.9568
+epoch 13/50  train_loss=0.0991 train_acc=0.9741  val_loss=0.0469 val_acc=0.9869
+epoch 14/50  train_loss=0.0550 train_acc=0.9839  val_loss=0.1003 val_acc=0.9601
+epoch 15/50  train_loss=0.0221 train_acc=0.9939  val_loss=0.0380 val_acc=0.9882
+epoch 16/50  train_loss=0.0415 train_acc=0.9888  val_loss=0.0291 val_acc=0.9908
+epoch 17/50  train_loss=0.0279 train_acc=0.9914  val_loss=0.0543 val_acc=0.9797
+epoch 18/50  train_loss=0.0160 train_acc=0.9945  val_loss=0.0324 val_acc=0.9895
+epoch 19/50  train_loss=0.0038 train_acc=0.9995  val_loss=0.0376 val_acc=0.9862
+epoch 20/50  train_loss=0.0057 train_acc=0.9984  val_loss=0.0223 val_acc=0.9902
+epoch 21/50  train_loss=0.0019 train_acc=1.0000  val_loss=0.0284 val_acc=0.9902
+epoch 22/50  train_loss=0.0141 train_acc=0.9969  val_loss=0.0231 val_acc=0.9921
+epoch 23/50  train_loss=0.0075 train_acc=0.9977  val_loss=1.6197 val_acc=0.8625
+epoch 24/50  train_loss=0.0099 train_acc=0.9973  val_loss=0.0302 val_acc=0.9908
+epoch 25/50  train_loss=0.0216 train_acc=0.9928  val_loss=0.0274 val_acc=0.9902
+epoch 26/50  train_loss=0.0125 train_acc=0.9959  val_loss=0.0246 val_acc=0.9928
+epoch 27/50  train_loss=0.0173 train_acc=0.9938  val_loss=0.0235 val_acc=0.9935
+epoch 28/50  train_loss=0.0101 train_acc=0.9962  val_loss=0.0546 val_acc=0.9849
+epoch 29/50  train_loss=0.0338 train_acc=0.9892  val_loss=0.0480 val_acc=0.9823
+epoch 30/50  train_loss=0.0205 train_acc=0.9939  val_loss=0.0554 val_acc=0.9862
+epoch 31/50  train_loss=0.0355 train_acc=0.9905  val_loss=0.0511 val_acc=0.9836
+epoch 32/50  train_loss=0.0201 train_acc=0.9939  val_loss=0.0613 val_acc=0.9804
+epoch 33/50  train_loss=0.0231 train_acc=0.9939  val_loss=0.0689 val_acc=0.9817
+epoch 34/50  train_loss=0.0133 train_acc=0.9967  val_loss=0.1092 val_acc=0.9679
+early stopping at epoch 34 (no val_loss improvement for 14 epochs)
+
+=== Test set results ===
+accuracy:  0.9908
+precision (macro): 0.9915
+recall/sensitivity (macro): 0.9910
+f1 (macro): 0.9911
+                          precision    recall  f1-score   support
+
+      Apple___Apple_scab     0.9932    0.9700    0.9815       300
+       Apple___Black_rot     0.9801    1.0000    0.9899       295
+Apple___Cedar_apple_rust     1.0000    1.0000    1.0000       122
+         Apple___healthy     0.9926    0.9938    0.9932       807
+
+                accuracy                         0.9908      1524
+               macro avg     0.9915    0.9910    0.9911      1524
+            weighted avg     0.9909    0.9908    0.9908      1524
+
+
+saved: ..\runs\apple_10run\seed_7/best_model.pt, history.json, accuracy_loss.png, confusion_matrix.png, test_metrics.json
+seed=8  output=..\runs\apple_10run\seed_8\split
+class                           train    val   test
+Apple___Apple_scab                 30    300    300
+Apple___Black_rot                  30    296    295
+Apple___Cedar_apple_rust           30    123    122
+Apple___healthy                    30    808    807
+classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy']
+train=120 val=1527 test=1524
+epoch 1/50  train_loss=1.2627 train_acc=0.3714  val_loss=1.3556 val_acc=0.6418
+epoch 2/50  train_loss=0.6220 train_acc=0.7420  val_loss=8.5555 val_acc=0.1801
+epoch 3/50  train_loss=0.2101 train_acc=0.9344  val_loss=0.0592 val_acc=0.9823
+epoch 4/50  train_loss=0.1576 train_acc=0.9594  val_loss=0.7812 val_acc=0.7269
+epoch 5/50  train_loss=0.5745 train_acc=0.7420  val_loss=1.5550 val_acc=0.1395
+epoch 6/50  train_loss=0.5294 train_acc=0.7823  val_loss=0.8843 val_acc=0.6850
+epoch 7/50  train_loss=0.1770 train_acc=0.9420  val_loss=0.1367 val_acc=0.9502
+epoch 8/50  train_loss=0.1853 train_acc=0.9447  val_loss=0.2349 val_acc=0.9299
+epoch 9/50  train_loss=0.1459 train_acc=0.9489  val_loss=0.4190 val_acc=0.8389
+epoch 10/50  train_loss=0.1057 train_acc=0.9680  val_loss=0.2209 val_acc=0.9208
+epoch 11/50  train_loss=0.0909 train_acc=0.9719  val_loss=0.0704 val_acc=0.9817
+epoch 12/50  train_loss=0.0782 train_acc=0.9758  val_loss=0.0691 val_acc=0.9810
+epoch 13/50  train_loss=0.0587 train_acc=0.9836  val_loss=0.0959 val_acc=0.9725
+epoch 14/50  train_loss=0.0211 train_acc=0.9931  val_loss=0.1104 val_acc=0.9614
+epoch 15/50  train_loss=0.0315 train_acc=0.9900  val_loss=0.0504 val_acc=0.9889
+epoch 16/50  train_loss=0.0162 train_acc=0.9962  val_loss=0.0595 val_acc=0.9817
+epoch 17/50  train_loss=0.0182 train_acc=0.9945  val_loss=0.0439 val_acc=0.9889
+epoch 18/50  train_loss=0.0113 train_acc=0.9962  val_loss=0.0438 val_acc=0.9817
+epoch 19/50  train_loss=0.0102 train_acc=0.9962  val_loss=0.0473 val_acc=0.9836
+epoch 20/50  train_loss=0.0038 train_acc=0.9989  val_loss=0.0465 val_acc=0.9862
+epoch 21/50  train_loss=0.0083 train_acc=0.9977  val_loss=0.0673 val_acc=0.9771
+epoch 22/50  train_loss=0.0077 train_acc=0.9983  val_loss=0.0567 val_acc=0.9804
+epoch 23/50  train_loss=0.0098 train_acc=0.9977  val_loss=0.0329 val_acc=0.9895
+epoch 24/50  train_loss=0.0091 train_acc=0.9975  val_loss=0.0742 val_acc=0.9784
+epoch 25/50  train_loss=0.0139 train_acc=0.9945  val_loss=0.0251 val_acc=0.9935
+epoch 26/50  train_loss=0.0054 train_acc=0.9988  val_loss=0.0290 val_acc=0.9921
+epoch 27/50  train_loss=0.0298 train_acc=0.9936  val_loss=0.0298 val_acc=0.9921
+epoch 28/50  train_loss=0.0099 train_acc=0.9962  val_loss=0.0747 val_acc=0.9777
+epoch 29/50  train_loss=0.0288 train_acc=0.9928  val_loss=0.0216 val_acc=0.9928
+epoch 30/50  train_loss=0.0154 train_acc=0.9955  val_loss=0.1121 val_acc=0.9640
+epoch 31/50  train_loss=0.0134 train_acc=0.9952  val_loss=0.0474 val_acc=0.9862
+epoch 32/50  train_loss=0.0150 train_acc=0.9952  val_loss=0.0201 val_acc=0.9941
+epoch 33/50  train_loss=0.0099 train_acc=0.9970  val_loss=0.0381 val_acc=0.9889
+epoch 34/50  train_loss=0.0135 train_acc=0.9956  val_loss=0.0853 val_acc=0.9804
+epoch 35/50  train_loss=0.0059 train_acc=0.9984  val_loss=0.0191 val_acc=0.9928
+epoch 36/50  train_loss=0.0049 train_acc=0.9988  val_loss=0.1297 val_acc=0.9666
+epoch 37/50  train_loss=0.0065 train_acc=0.9977  val_loss=0.0330 val_acc=0.9921
+epoch 38/50  train_loss=0.0090 train_acc=0.9975  val_loss=0.0326 val_acc=0.9902
+epoch 39/50  train_loss=0.0047 train_acc=0.9984  val_loss=0.0249 val_acc=0.9921
+epoch 40/50  train_loss=0.0026 train_acc=0.9992  val_loss=0.0270 val_acc=0.9921
+epoch 41/50  train_loss=0.0025 train_acc=0.9994  val_loss=0.0368 val_acc=0.9921
+epoch 42/50  train_loss=0.0036 train_acc=0.9991  val_loss=0.0376 val_acc=0.9935
+epoch 43/50  train_loss=0.0051 train_acc=0.9983  val_loss=0.2061 val_acc=0.9470
+epoch 44/50  train_loss=0.0063 train_acc=0.9981  val_loss=0.0433 val_acc=0.9856
+epoch 45/50  train_loss=0.0091 train_acc=0.9978  val_loss=0.0325 val_acc=0.9902
+epoch 46/50  train_loss=0.0051 train_acc=0.9986  val_loss=0.0271 val_acc=0.9915
+epoch 47/50  train_loss=0.0043 train_acc=0.9988  val_loss=0.0977 val_acc=0.9731
+epoch 48/50  train_loss=0.0053 train_acc=0.9988  val_loss=0.0331 val_acc=0.9928
+epoch 49/50  train_loss=0.0076 train_acc=0.9981  val_loss=0.0327 val_acc=0.9908
+early stopping at epoch 49 (no val_loss improvement for 14 epochs)
+
+=== Test set results ===
+accuracy:  0.9895
+precision (macro): 0.9804
+recall/sensitivity (macro): 0.9893
+f1 (macro): 0.9846
+                          precision    recall  f1-score   support
+
+      Apple___Apple_scab     0.9931    0.9633    0.9780       300
+       Apple___Black_rot     0.9866    1.0000    0.9933       295
+Apple___Cedar_apple_rust     0.9457    1.0000    0.9721       122
+         Apple___healthy     0.9963    0.9938    0.9950       807
+
+                accuracy                         0.9895      1524
+               macro avg     0.9804    0.9893    0.9846      1524
+            weighted avg     0.9897    0.9895    0.9895      1524
+
+
+saved: ..\runs\apple_10run\seed_8/best_model.pt, history.json, accuracy_loss.png, confusion_matrix.png, test_metrics.json
+seed=9  output=..\runs\apple_10run\seed_9\split
+class                           train    val   test
+Apple___Apple_scab                 30    300    300
+Apple___Black_rot                  30    296    295
+Apple___Cedar_apple_rust           30    123    122
+Apple___healthy                    30    808    807
+classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy']
+train=120 val=1527 test=1524
+epoch 1/50  train_loss=1.1138 train_acc=0.4773  val_loss=0.9500 val_acc=0.6051
+epoch 2/50  train_loss=0.2819 train_acc=0.8981  val_loss=0.2251 val_acc=0.9155
+epoch 3/50  train_loss=0.1926 train_acc=0.9377  val_loss=0.1568 val_acc=0.9587
+epoch 4/50  train_loss=0.3511 train_acc=0.8930  val_loss=1.4921 val_acc=0.7387
+epoch 5/50  train_loss=0.1718 train_acc=0.9436  val_loss=0.9858 val_acc=0.7485
+epoch 6/50  train_loss=0.1808 train_acc=0.9434  val_loss=0.9098 val_acc=0.7099
+epoch 7/50  train_loss=0.1103 train_acc=0.9642  val_loss=0.2624 val_acc=0.9070
+epoch 8/50  train_loss=0.1077 train_acc=0.9695  val_loss=0.0857 val_acc=0.9686
+epoch 9/50  train_loss=0.1561 train_acc=0.9508  val_loss=0.1847 val_acc=0.9384
+epoch 10/50  train_loss=0.0853 train_acc=0.9741  val_loss=0.2544 val_acc=0.9018
+epoch 11/50  train_loss=0.0923 train_acc=0.9717  val_loss=0.1058 val_acc=0.9594
+epoch 12/50  train_loss=0.0829 train_acc=0.9772  val_loss=0.7619 val_acc=0.8029
+epoch 13/50  train_loss=0.0681 train_acc=0.9773  val_loss=0.1292 val_acc=0.9587
+epoch 14/50  train_loss=0.0274 train_acc=0.9916  val_loss=0.0499 val_acc=0.9836
+epoch 15/50  train_loss=0.0341 train_acc=0.9884  val_loss=0.0645 val_acc=0.9790
+epoch 16/50  train_loss=0.0255 train_acc=0.9909  val_loss=0.0606 val_acc=0.9836
+epoch 17/50  train_loss=0.0205 train_acc=0.9931  val_loss=0.0985 val_acc=0.9705
+epoch 18/50  train_loss=0.0098 train_acc=0.9967  val_loss=0.0280 val_acc=0.9895
+epoch 19/50  train_loss=0.0152 train_acc=0.9959  val_loss=0.0209 val_acc=0.9935
+epoch 20/50  train_loss=0.0059 train_acc=0.9988  val_loss=0.0161 val_acc=0.9948
+epoch 21/50  train_loss=0.0064 train_acc=0.9981  val_loss=0.0140 val_acc=0.9954
+epoch 22/50  train_loss=0.0061 train_acc=0.9986  val_loss=0.0178 val_acc=0.9928
+epoch 23/50  train_loss=0.0053 train_acc=0.9989  val_loss=0.0267 val_acc=0.9895
+epoch 24/50  train_loss=0.0158 train_acc=0.9969  val_loss=0.0227 val_acc=0.9902
+epoch 25/50  train_loss=0.0218 train_acc=0.9922  val_loss=0.1035 val_acc=0.9673
+epoch 26/50  train_loss=0.0172 train_acc=0.9942  val_loss=0.0337 val_acc=0.9902
+epoch 27/50  train_loss=0.0087 train_acc=0.9977  val_loss=1.0889 val_acc=0.8186
+epoch 28/50  train_loss=0.0339 train_acc=0.9900  val_loss=0.0307 val_acc=0.9889
+epoch 29/50  train_loss=0.0388 train_acc=0.9894  val_loss=0.0859 val_acc=0.9712
+epoch 30/50  train_loss=0.0196 train_acc=0.9948  val_loss=0.0616 val_acc=0.9764
+epoch 31/50  train_loss=0.0049 train_acc=0.9994  val_loss=0.0496 val_acc=0.9843
+epoch 32/50  train_loss=0.0220 train_acc=0.9933  val_loss=0.0212 val_acc=0.9921
+epoch 33/50  train_loss=0.0169 train_acc=0.9945  val_loss=0.0325 val_acc=0.9882
+epoch 34/50  train_loss=0.0105 train_acc=0.9966  val_loss=0.0179 val_acc=0.9948
+epoch 35/50  train_loss=0.0088 train_acc=0.9967  val_loss=0.0245 val_acc=0.9915
+early stopping at epoch 35 (no val_loss improvement for 14 epochs)
+
+=== Test set results ===
+accuracy:  0.9888
+precision (macro): 0.9885
+recall/sensitivity (macro): 0.9850
+f1 (macro): 0.9866
+                          precision    recall  f1-score   support
+
+      Apple___Apple_scab     0.9931    0.9600    0.9763       300
+       Apple___Black_rot     0.9672    1.0000    0.9833       295
+Apple___Cedar_apple_rust     1.0000    0.9836    0.9917       122
+         Apple___healthy     0.9938    0.9963    0.9950       807
+
+                accuracy                         0.9888      1524
+               macro avg     0.9885    0.9850    0.9866      1524
+            weighted avg     0.9890    0.9888    0.9888      1524
+
+
+saved: ..\runs\apple_10run\seed_9/best_model.pt, history.json, accuracy_loss.png, confusion_matrix.png, test_metrics.json
+seed=10  output=..\runs\apple_10run\seed_10\split
+class                           train    val   test
+Apple___Apple_scab                 30    300    300
+Apple___Black_rot                  30    296    295
+Apple___Cedar_apple_rust           30    123    122
+Apple___healthy                    30    808    807
+classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy']
+train=120 val=1527 test=1524
+epoch 1/50  train_loss=1.3962 train_acc=0.2838  val_loss=1.1294 val_acc=0.4578
+epoch 2/50  train_loss=0.8306 train_acc=0.6294  val_loss=67048.1852 val_acc=0.5291
+epoch 3/50  train_loss=0.5483 train_acc=0.7748  val_loss=4.1973 val_acc=0.3373
+epoch 4/50  train_loss=0.2907 train_acc=0.9014  val_loss=0.3811 val_acc=0.8513
+epoch 5/50  train_loss=0.2189 train_acc=0.9272  val_loss=0.6804 val_acc=0.7800
+epoch 6/50  train_loss=0.1787 train_acc=0.9395  val_loss=0.4417 val_acc=0.8697
+epoch 7/50  train_loss=0.2518 train_acc=0.9216  val_loss=4.2900 val_acc=0.5737
+epoch 8/50  train_loss=0.1285 train_acc=0.9556  val_loss=0.2533 val_acc=0.9129
+epoch 9/50  train_loss=0.1264 train_acc=0.9589  val_loss=0.1543 val_acc=0.9358
+epoch 10/50  train_loss=0.1291 train_acc=0.9606  val_loss=0.4319 val_acc=0.8946
+epoch 11/50  train_loss=0.0528 train_acc=0.9841  val_loss=0.1492 val_acc=0.9496
+epoch 12/50  train_loss=0.0636 train_acc=0.9814  val_loss=3.6496 val_acc=0.5232
+epoch 13/50  train_loss=0.0408 train_acc=0.9877  val_loss=0.7749 val_acc=0.8055
+epoch 14/50  train_loss=0.0577 train_acc=0.9838  val_loss=0.1620 val_acc=0.9568
+epoch 15/50  train_loss=0.0214 train_acc=0.9931  val_loss=0.3347 val_acc=0.9044
+epoch 16/50  train_loss=0.0128 train_acc=0.9967  val_loss=0.2964 val_acc=0.9273
+epoch 17/50  train_loss=0.0231 train_acc=0.9934  val_loss=0.0886 val_acc=0.9745
+epoch 18/50  train_loss=0.0082 train_acc=0.9977  val_loss=0.0933 val_acc=0.9751
+epoch 19/50  train_loss=0.0185 train_acc=0.9964  val_loss=0.1480 val_acc=0.9607
+epoch 20/50  train_loss=0.0032 train_acc=0.9997  val_loss=0.0945 val_acc=0.9758
+epoch 21/50  train_loss=0.0095 train_acc=0.9973  val_loss=0.1426 val_acc=0.9666
+epoch 22/50  train_loss=0.0055 train_acc=0.9986  val_loss=0.7069 val_acc=0.8310
+epoch 23/50  train_loss=0.0045 train_acc=0.9991  val_loss=0.0919 val_acc=0.9784
+epoch 24/50  train_loss=0.0099 train_acc=0.9970  val_loss=0.2616 val_acc=0.9483
+epoch 25/50  train_loss=0.0121 train_acc=0.9977  val_loss=0.1181 val_acc=0.9731
+epoch 26/50  train_loss=0.0039 train_acc=0.9988  val_loss=0.1336 val_acc=0.9679
+epoch 27/50  train_loss=0.0276 train_acc=0.9931  val_loss=0.0982 val_acc=0.9745
+epoch 28/50  train_loss=0.0279 train_acc=0.9916  val_loss=0.1982 val_acc=0.9463
+epoch 29/50  train_loss=0.0074 train_acc=0.9980  val_loss=0.1269 val_acc=0.9679
+epoch 30/50  train_loss=0.0401 train_acc=0.9909  val_loss=0.1784 val_acc=0.9587
+epoch 31/50  train_loss=0.0187 train_acc=0.9945  val_loss=0.0761 val_acc=0.9771
+epoch 32/50  train_loss=0.0172 train_acc=0.9944  val_loss=0.1497 val_acc=0.9607
+epoch 33/50  train_loss=0.0318 train_acc=0.9942  val_loss=0.1061 val_acc=0.9731
+epoch 34/50  train_loss=0.0072 train_acc=0.9983  val_loss=0.1628 val_acc=0.9528
+epoch 35/50  train_loss=0.0130 train_acc=0.9964  val_loss=0.0798 val_acc=0.9823
+epoch 36/50  train_loss=0.0073 train_acc=0.9991  val_loss=0.1053 val_acc=0.9725
+epoch 37/50  train_loss=0.0056 train_acc=0.9986  val_loss=0.1471 val_acc=0.9679
+epoch 38/50  train_loss=0.0073 train_acc=0.9989  val_loss=0.1276 val_acc=0.9692
+epoch 39/50  train_loss=0.0070 train_acc=0.9978  val_loss=0.1221 val_acc=0.9712
+epoch 40/50  train_loss=0.0025 train_acc=0.9994  val_loss=0.0630 val_acc=0.9797
+epoch 41/50  train_loss=0.0035 train_acc=0.9992  val_loss=0.0916 val_acc=0.9771
+epoch 42/50  train_loss=0.0063 train_acc=0.9980  val_loss=0.0961 val_acc=0.9810
+epoch 43/50  train_loss=0.0016 train_acc=1.0000  val_loss=0.1007 val_acc=0.9758
+epoch 44/50  train_loss=0.0030 train_acc=0.9995  val_loss=0.2921 val_acc=0.9371
+epoch 45/50  train_loss=0.0057 train_acc=0.9988  val_loss=0.1079 val_acc=0.9718
+epoch 46/50  train_loss=0.0106 train_acc=0.9966  val_loss=0.1154 val_acc=0.9731
+epoch 47/50  train_loss=0.0023 train_acc=0.9997  val_loss=0.1404 val_acc=0.9686
+epoch 48/50  train_loss=0.0131 train_acc=0.9966  val_loss=0.0891 val_acc=0.9705
+epoch 49/50  train_loss=0.0107 train_acc=0.9966  val_loss=0.1852 val_acc=0.9653
+epoch 50/50  train_loss=0.0084 train_acc=0.9977  val_loss=0.1746 val_acc=0.9620
+
+=== Test set results ===
+accuracy:  0.9738
+precision (macro): 0.9581
+recall/sensitivity (macro): 0.9690
+f1 (macro): 0.9628
+                          precision    recall  f1-score   support
+
+      Apple___Apple_scab     0.9786    0.9133    0.9448       300
+       Apple___Black_rot     0.9633    0.9797    0.9714       295
+Apple___Cedar_apple_rust     0.9030    0.9918    0.9453       122
+         Apple___healthy     0.9877    0.9913    0.9895       807
+
+                accuracy                         0.9738      1524
+               macro avg     0.9581    0.9690    0.9628      1524
+            weighted avg     0.9744    0.9738    0.9737      1524
+
+
+saved: ..\runs\apple_10run\seed_10/best_model.pt, history.json, accuracy_loss.png, confusion_matrix.png, test_metrics.json
+
+=== run 1/10  seed=1 ===
+
+=== run 2/10  seed=2 ===
+
+=== run 3/10  seed=3 ===
+
+=== run 4/10  seed=4 ===
+
+=== run 5/10  seed=5 ===
+
+=== run 6/10  seed=6 ===
+
+=== run 7/10  seed=7 ===
+
+=== run 8/10  seed=8 ===
+
+=== run 9/10  seed=9 ===
+
+=== run 10/10  seed=10 ===
+
+=== summary over 10 runs ===
+accuracy                     mean=98.74%  std=0.47%
+precision_macro              mean=98.40%  std=0.92%
+recall_sensitivity_macro     mean=98.42%  std=0.63%
+f1_macro                     mean=98.38%  std=0.75%
+
+saved summary: ..\runs\apple_10run\summary_10run.json
