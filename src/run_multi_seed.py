@@ -30,10 +30,8 @@ def main():
     ap.add_argument("--output_root", default="../runs/apple_10run")
     ap.add_argument("--n_runs", type=int, default=10)
     ap.add_argument("--start_seed", type=int, default=1)
-    # forwarded training hyperparameters (defaults match the paper; override if needed)
-    ap.add_argument("--epochs", type=int, default=50)
-    ap.add_argument("--steps_per_epoch", type=int, default=200)
-    ap.add_argument("--extra_train_args", default="", help="extra CLI args appended verbatim to train_apple_pitlid.py")
+    ap.add_argument("--extra_train_args", default="", help="extra CLI args appended verbatim to train_apple_pitlid.py "
+                     "(e.g. --stage1_epochs/--stage2_epochs to override the official protocol's defaults)")
     args = ap.parse_args()
 
     output_root = Path(args.output_root)
@@ -59,8 +57,6 @@ def main():
             "--data_dir", str(split_dir),
             "--output_dir", str(run_dir),
             "--seed", str(seed),
-            "--epochs", str(args.epochs),
-            "--steps_per_epoch", str(args.steps_per_epoch),
         ]
         if args.extra_train_args:
             train_cmd += args.extra_train_args.split()
