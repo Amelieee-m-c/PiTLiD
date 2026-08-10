@@ -17,6 +17,31 @@ API,「無法直接執行」——但這不代表不能拿來讀,程式碼裡的
 文字可靠。`src/train_apple_pitlid.py` 現在已經照官方蘋果訓練腳本
 (`differant setting/prediy7.py`)重寫,細節見下方「架構/協定修正」。
 
+## Pretrained Models
+
+10-run 協定裡表現最好的單一 seed(不是平均值,是挑出的最佳個例,更接近
+論文 99.45% 的水準),發布在
+[Releases](https://github.com/Amelieee-m-c/PiTLiD/releases/tag/v1.0-official-code)
+(檔案較大,84MB 左右,不直接 commit 進 git 歷史):
+
+| 模型 | LR 策略 | Test Accuracy | 下載 |
+|---|---|---|---|
+| `apple_stepdecay_seed1_99.41acc.pt` | step_decay(官方 code 目前 committed 的版本) | **99.41%** | [下載](https://github.com/Amelieee-m-c/PiTLiD/releases/download/v1.0-official-code/apple_stepdecay_seed1_99.41acc.pt) |
+| `apple_clr_seed3_99.21acc.pt` | 真 CLR(論文 Figure 5B 主張的策略) | 99.21% | [下載](https://github.com/Amelieee-m-c/PiTLiD/releases/download/v1.0-official-code/apple_clr_seed3_99.21acc.pt) |
+
+載入方式:
+
+```python
+import torch
+from src.train_apple_pitlid import build_model
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = build_model(num_classes=4, device=device)
+model.load_state_dict(torch.load("apple_stepdecay_seed1_99.41acc.pt", map_location=device))
+model.eval()
+# class order: Apple_scab, Black_rot, Cedar_apple_rust, healthy (見 data_prep/make_pitlid_apple_split.py)
+```
+
 ## 重現結果
 
 蘋果 4 類分類,10 次獨立跑(`src/run_multi_seed.py`),平均值 ± 標準差。

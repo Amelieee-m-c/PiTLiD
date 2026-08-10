@@ -9,6 +9,8 @@ data/
 *.pth
 *.keras
 *.h5
+# staging folder for GitHub Release uploads (published via `gh release`, not git)
+release_assets/
 
 # python
 __pycache__/
