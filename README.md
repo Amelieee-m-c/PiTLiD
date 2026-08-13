@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-CUDA-EE4C2C?logo=pytorch&logoColor=white)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-Keras_port-FF6F00?logo=tensorflow&logoColor=white)
-![Reproduction](https://img.shields.io/badge/accuracy_gap-±0.7pp-2ea44f)
+![Reproduction](https://img.shields.io/badge/status-no_variant_matches_paper-dbab09)
 ![License](https://img.shields.io/badge/license-MIT-2ea44f)
 
 重現的論文:
@@ -137,24 +137,30 @@ step decay 差,不代表 CLR 這個方法本身沒用。**目前沒有一個版�
 
 ## 模型與訓練(`src/train_apple_pitlid.py`)
 
+架構跟訓練協定都已經照官方程式碼重寫,完整對照表見上方「架構/協定修正」。
+現行設定摘要:
+
 - Backbone:`torchvision` 的 Inception-V3,ImageNet 預訓練,**全部層都微調**
-  (對應論文表現最好的 "None_frozen" 策略)。
-- 分類頭:GAP 直接接 `Linear(2048, 4)` + softmax(關掉 dropout,對應論文說的
-  "GAP connects directly to the output layer";關掉 aux classifier,因為 Keras
-  的 `InceptionV3(include_top=False)` 本來就沒有這個)。
-- 前處理:resize 到 299×299,`ToTensor()`(rescale 到 [0,1],即除以 255)——
-  沒有做 ImageNet mean/std normalize,照論文規格。如果收斂有問題,可以加
-  `--imagenet_norm` 把 normalize 加回去。
-- 資料增強(僅訓練集):隨機水平/垂直翻轉 + 一個結合 rotation/shift/zoom/shear
-  的 `RandomAffine`。
-- Optimizer:RMSprop,`weight_decay` 對應 L2 正則化。
-- Batch size:train 32 / val 16。Epochs 50,steps/epoch 200(訓練集每個
-  epoch 都用取後放回的方式重新取樣,對應 Keras 在 120 張圖的目錄上用
-  `ImageDataGenerator` + `steps_per_epoch` 的行為)。
-- 學習率:Cyclical LR,`mode="triangular2"`,`base_lr=0.001`,
-  `max_lr=0.006`(`--clr_step_size`,預設每半週期 2000 個 batch——論文摘錄
-  裡沒有明確給這個數字,如果你知道確切數值可以自行調整)。
-- Early stopping:監控 `val_loss`,patience 14,還原最佳權重。
+  (對應論文表現最好的 "None_frozen" 策略),但分兩階段進行(先凍結只練
+  分類頭,再解凍全部層)。
+- 分類頭:GAP → `Dropout(0.5)` → `ReLU` → `Linear(2048, 4)` + softmax(關掉
+  aux classifier,因為 Keras 的 `InceptionV3(include_top=False)` 本來就沒有
+  這個)。
+- 前處理:resize 到 **256×256**(不是 299×299),`ToTensor()`(rescale 到
+  [0,1],即除以 255)——沒有做 ImageNet mean/std normalize,照官方程式碼。
+  如果收斂有問題,可以加 `--imagenet_norm` 把 normalize 加回去。
+- 資料增強(僅訓練集):水平+垂直翻轉 + 一個結合 rotation(90°)/shift(0.3)/
+  zoom(0.3)/shear(0.3°)的 `RandomAffine`。
+- Optimizer:RMSprop。`--weight_decay` 預設 **0.0**(官方程式碼寫的 L2
+  很可能是 Keras 1→2 API 沒接上的死碼,見上方「架構/協定修正」表格)。
+- Batch size:train 32 / val 16。兩階段 epoch/steps 不同:stage1(凍結)10
+  epoch × 100 steps,stage2(解凍)40 epoch × 200 steps(取後放回重新取樣,
+  對應 Keras 在小資料夾上用 `ImageDataGenerator` + `steps_per_epoch` 的
+  行為)。
+- 學習率:`--lr_strategy {clr, step_decay}`(預設 `clr`),兩種都有官方
+  程式碼證據支持,詳見上方「LR 策略:CLR vs step decay」。
+- Early stopping:**沒有實際作用**(官方程式碼裡是死碼),兩階段都跑滿
+  固定 epoch 數,只保留驗證集 accuracy 最高的那次權重。
 - 測試集指標:accuracy、macro precision/recall(=sensitivity)/F1、混淆矩陣
   (原始值+標準化,存成 PNG)、完整的 `sklearn.classification_report`。
 
@@ -168,23 +174,24 @@ step decay 差,不代表 CLR 這個方法本身沒用。**目前沒有一個版�
 
 ```
 python data_prep/make_pitlid_apple_split.py --seed 1
-python src/train_apple_pitlid.py --data_dir data/apple_pitlid_split --output_dir runs/apple_seed1
+python src/train_apple_pitlid.py --data_dir data/apple_pitlid_split --output_dir runs/apple_seed1 --lr_strategy clr
 
-# 完整論文協定,GPU 上約 4-6 小時:
-python src/run_multi_seed.py --n_runs 10 --output_root runs/apple_10run
+# 完整論文協定(兩組 LR 策略都跑),GPU 上每組約數小時:
+python src/run_multi_seed.py --n_runs 10 --output_root runs/apple_10run_clr --extra_train_args "--lr_strategy clr"
+python src/run_multi_seed.py --n_runs 10 --output_root runs/apple_10run_stepdecay --extra_train_args "--lr_strategy step_decay"
 ```
 
-## 已知偏差 / 需要對照論文 PDF 再次確認的假設
+## 已知偏差 / 仍未解決的部分
 
-- `clr_step_size`(CLR 半週期的 batch 數):預設 2000,目前拿到的論文摘錄
-  沒有給出這個數字。
-- L2 weight_decay 強度:預設 `1e-4`,論文沒有明確給出。
-- Early stopping 監控的是 `val_loss`(Keras 預設行為);要再確認論文是否
-  改監控 training loss。
+- `clr_step_size`(CLR 半週期的 batch 數):預設 2000,`clr_callback.py`
+  遺失,無法從官方程式碼確認實際數值,論文文字也沒給。
 - 10-run 協定每次都重新抽 30-shot 切分(見上方說明)——要再確認論文是否
   其實是 10 次都用同一組切分。
 - 葡萄/桃子泛化資料集(同樣是 30-shot):已經實作並跑過(單一 seed,
-  Keras 版本)——結果見上方。
+  Keras 版本,舊架構)——結果見上方,尚未用官方架構重跑。
+- 其餘架構/協定層面的已知偏差(分類頭、輸入尺寸、訓練階段、early
+  stopping、L2、資料增強、LR 策略)已經全部在上方「架構/協定修正」段落
+  詳細記錄,不在此重複。
 
 ## 環境需求
 
