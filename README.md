@@ -183,8 +183,11 @@ python src/run_multi_seed.py --n_runs 10 --output_root runs/apple_10run_stepdeca
 
 ## 已知偏差 / 仍未解決的部分
 
-- `clr_step_size`(CLR 半週期的 batch 數):預設 2000,`clr_callback.py`
-  遺失,無法從官方程式碼確認實際數值,論文文字也沒給。
+- ~~`clr_step_size`(CLR 半週期的 batch 數):預設 2000,`clr_callback.py`
+  遺失,無法從官方程式碼確認實際數值,論文文字也沒給。~~ **已確認**:
+  論文 Figure 5B 的 CLR triangular2 圖直接可以讀出來——第一個峰值在
+  iteration 2000、回到 base_lr 在 4000、第二個峰值在 6000,半週期正好是
+  **2000**,跟我們一直用的預設值完全一致,不再是猜的。
 - 10-run 協定每次都重新抽 30-shot 切分(見上方說明)——要再確認論文是否
   其實是 10 次都用同一組切分。
 - 葡萄/桃子泛化資料集(同樣是 30-shot):已經實作並跑過(單一 seed,
