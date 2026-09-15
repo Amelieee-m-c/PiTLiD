@@ -32,25 +32,45 @@ def main():
     ap.add_argument("--start_seed", type=int, default=1)
     ap.add_argument("--extra_train_args", default="", help="extra CLI args appended verbatim to train_apple_pitlid.py "
                      "(e.g. --stage1_epochs/--stage2_epochs to override the official protocol's defaults)")
+    ap.add_argument("--fixed_split_seed", type=int, default=None,
+                     help="if set, generate the 30-shot split ONCE with this seed and reuse it for all n_runs, "
+                          "varying only the training seed (weight init / batch order) -- tests whether the "
+                          "paper's '10 independent runs' protocol means one fixed split + 10 training seeds, "
+                          "rather than this script's default of a fresh random split every run.")
     args = ap.parse_args()
 
     output_root = Path(args.output_root)
     output_root.mkdir(parents=True, exist_ok=True)
 
+    fixed_split_dir = None
+    if args.fixed_split_seed is not None:
+        fixed_split_dir = output_root / "fixed_split"
+        print(f"\n=== generating ONE fixed 30-shot split (seed={args.fixed_split_seed}), reused for all {args.n_runs} runs ===")
+        subprocess.run(
+            [sys.executable, str(DATA_PREP),
+             "--source_dir", args.source_dir,
+             "--output_dir", str(fixed_split_dir),
+             "--seed", str(args.fixed_split_seed)],
+            check=True,
+        )
+
     all_metrics = []
     for i in range(args.n_runs):
         seed = args.start_seed + i
         run_dir = output_root / f"seed_{seed}"
-        split_dir = run_dir / "split"
         print(f"\n=== run {i+1}/{args.n_runs}  seed={seed} ===")
 
-        subprocess.run(
-            [sys.executable, str(DATA_PREP),
-             "--source_dir", args.source_dir,
-             "--output_dir", str(split_dir),
-             "--seed", str(seed)],
-            check=True,
-        )
+        if fixed_split_dir is not None:
+            split_dir = fixed_split_dir
+        else:
+            split_dir = run_dir / "split"
+            subprocess.run(
+                [sys.executable, str(DATA_PREP),
+                 "--source_dir", args.source_dir,
+                 "--output_dir", str(split_dir),
+                 "--seed", str(seed)],
+                check=True,
+            )
 
         train_cmd = [
             sys.executable, str(TRAIN),

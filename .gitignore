@@ -1,6 +1,7 @@
 # datasets — not redistributed
 data/
 **/split/
+**/fixed_split/
 *.JPG
 *.JPEG
 
