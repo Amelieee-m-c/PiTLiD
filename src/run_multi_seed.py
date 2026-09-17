@@ -20,12 +20,17 @@ from pathlib import Path
 import numpy as np
 
 HERE = Path(__file__).resolve().parent
-DATA_PREP = HERE.parent / "data_prep" / "make_pitlid_apple_split.py"
+DATA_PREP_APPLE = HERE.parent / "data_prep" / "make_pitlid_apple_split.py"
+DATA_PREP_GENERIC = HERE.parent / "data_prep" / "make_pitlid_split.py"
 TRAIN = HERE / "train_apple_pitlid.py"
 
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--crop", default="apple", choices=["apple", "grape", "peach"],
+                     help="apple uses make_pitlid_apple_split.py (paper's main task); "
+                          "grape/peach use the generic make_pitlid_split.py --crop (paper's "
+                          "generalization tasks, same 30-shot protocol, fewer classes)")
     ap.add_argument("--source_dir", default="E:/plant_disease/PlantVillage_full")
     ap.add_argument("--output_root", default="../runs/apple_10run")
     ap.add_argument("--n_runs", type=int, default=10)
@@ -42,17 +47,23 @@ def main():
     output_root = Path(args.output_root)
     output_root.mkdir(parents=True, exist_ok=True)
 
+    def data_prep_cmd(output_dir, seed):
+        if args.crop == "apple":
+            return [sys.executable, str(DATA_PREP_APPLE),
+                    "--source_dir", args.source_dir,
+                    "--output_dir", str(output_dir),
+                    "--seed", str(seed)]
+        return [sys.executable, str(DATA_PREP_GENERIC),
+                "--crop", args.crop,
+                "--source_dir", args.source_dir,
+                "--output_dir", str(output_dir),
+                "--seed", str(seed)]
+
     fixed_split_dir = None
     if args.fixed_split_seed is not None:
         fixed_split_dir = output_root / "fixed_split"
         print(f"\n=== generating ONE fixed 30-shot split (seed={args.fixed_split_seed}), reused for all {args.n_runs} runs ===")
-        subprocess.run(
-            [sys.executable, str(DATA_PREP),
-             "--source_dir", args.source_dir,
-             "--output_dir", str(fixed_split_dir),
-             "--seed", str(args.fixed_split_seed)],
-            check=True,
-        )
+        subprocess.run(data_prep_cmd(fixed_split_dir, args.fixed_split_seed), check=True)
 
     all_metrics = []
     for i in range(args.n_runs):
@@ -64,13 +75,7 @@ def main():
             split_dir = fixed_split_dir
         else:
             split_dir = run_dir / "split"
-            subprocess.run(
-                [sys.executable, str(DATA_PREP),
-                 "--source_dir", args.source_dir,
-                 "--output_dir", str(split_dir),
-                 "--seed", str(seed)],
-                check=True,
-            )
+            subprocess.run(data_prep_cmd(split_dir, seed), check=True)
 
         train_cmd = [
             sys.executable, str(TRAIN),

@@ -209,6 +209,7 @@ def predict_all(model, loader, device):
 
 
 def plot_confusion_matrix(cm, class_names, out_path):
+    crop = class_names[0].split("___")[0] if "___" in class_names[0] else "?"
     cm_norm = cm.astype(float) / cm.sum(axis=1, keepdims=True)
     fig, ax = plt.subplots(figsize=(6, 5))
     im = ax.imshow(cm_norm, cmap=plt.cm.Blues, vmin=0, vmax=1)
@@ -218,7 +219,7 @@ def plot_confusion_matrix(cm, class_names, out_path):
     ax.set_yticklabels(class_names)
     ax.set_xlabel("Predicted label")
     ax.set_ylabel("True label")
-    ax.set_title("Confusion matrix (PiTLiD - Apple)")
+    ax.set_title(f"Confusion matrix (PiTLiD - {crop})")
     for i in range(len(class_names)):
         for j in range(len(class_names)):
             color = "white" if cm_norm[i, j] > 0.5 else "black"

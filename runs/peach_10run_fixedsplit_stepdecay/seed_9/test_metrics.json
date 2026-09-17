@@ -1,0 +1,23 @@
+{
+  "accuracy": 0.9961479198767335,
+  "precision_macro": 0.9951530168666318,
+  "recall_sensitivity_macro": 0.9874374816122389,
+  "f1_macro": 0.9912529330977421,
+  "confusion_matrix": [
+    [
+      1132,
+      1
+    ],
+    [
+      4,
+      161
+    ]
+  ],
+  "class_names": [
+    "Peach___Bacterial_spot",
+    "Peach___healthy"
+  ],
+  "classification_report": "                        precision    recall  f1-score   support\n\nPeach___Bacterial_spot     0.9965    0.9991    0.9978      1133\n       Peach___healthy     0.9938    0.9758    0.9847       165\n\n              accuracy                         0.9961      1298\n             macro avg     0.9952    0.9874    0.9913      1298\n          weighted avg     0.9961    0.9961    0.9961      1298\n",
+  "best_val_acc": 0.9984603541185527,
+  "stopped_epoch": 50
+}
