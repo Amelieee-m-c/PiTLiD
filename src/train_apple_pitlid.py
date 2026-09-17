@@ -261,6 +261,23 @@ def main():
     ap.add_argument("--imagenet_norm", action="store_true",
                      help="paper specifies rescale-only (/255); pass this flag to additionally "
                           "apply ImageNet mean/std normalization if convergence is a problem")
+    ap.add_argument("--single_stage", action="store_true",
+                     help="paper's own text (Section 3.2.2/3.2.6) describes a SINGLE continuous "
+                          "training run with all layers trainable from epoch 0 (None_frozen, "
+                          "confirmed best in the paper's own frozen-layer-count ablation) and "
+                          "steps_per_epoch=200 for the whole run -- not the two-stage frozen-"
+                          "warmup-then-unfreeze structure that's actually committed in prediy7.py "
+                          "and that this script otherwise follows. Pass this flag to skip stage 1 "
+                          "entirely and train all stage2_epochs with everything unfrozen from the "
+                          "start, matching the paper's literal described protocol instead of the "
+                          "official code's structure.")
+    ap.add_argument("--early_stopping_patience", type=int, default=None,
+                     help="paper Section 3.2.2 states early stopping with patience=14 was actually "
+                          "applied (monitoring val_loss) to produce the headline 99.45% result -- "
+                          "contradicting our reading of the official code's EarlyStopping as dead "
+                          "code (built but never passed to fit_generator). Default None preserves "
+                          "the existing behavior (always run the full fixed epoch budget); pass 14 "
+                          "to test the paper-literal reading.")
     args = ap.parse_args()
 
     set_seed(args.seed)
@@ -291,13 +308,20 @@ def main():
     best_val_acc = -1.0
     best_state = copy.deepcopy(model.state_dict())
     history = []
+    stopped_early = False
+    best_val_loss = float("inf")
+    epochs_without_improvement = 0
+
+    stage1_epochs = 0 if args.single_stage else args.stage1_epochs
 
     # ---- stage 1: backbone frozen, train head only ----
     # Same constant starting lr (1e-3) either way -- CLR's base_lr equals
     # step_decay's pre-epoch-20 value, so the short frozen warmup doesn't
-    # need to branch on lr_strategy.
+    # need to branch on lr_strategy. Skipped entirely under --single_stage
+    # (paper's own text describes None_frozen -- all layers trainable from
+    # epoch 0 -- as the best/actual protocol, not a frozen warmup).
     optimizer = torch.optim.RMSprop(model.fc.parameters(), lr=lr_for_epoch(0))
-    for epoch in range(args.stage1_epochs):
+    for epoch in range(stage1_epochs):
         for g in optimizer.param_groups:
             g["lr"] = lr_for_epoch(epoch)
         train_loss, train_acc = run_epoch(model, stage1_loader, criterion, optimizer, device, train=True)
@@ -305,7 +329,7 @@ def main():
         history.append({"epoch": epoch, "stage": 1, "lr": lr_for_epoch(epoch),
                          "train_loss": train_loss, "train_acc": train_acc,
                          "val_loss": val_loss, "val_acc": val_acc})
-        print(f"[stage1] epoch {epoch+1}/{args.stage1_epochs}  lr={lr_for_epoch(epoch):.0e}  "
+        print(f"[stage1] epoch {epoch+1}/{stage1_epochs}  lr={lr_for_epoch(epoch):.0e}  "
               f"train_loss={train_loss:.4f} train_acc={train_acc:.4f}  "
               f"val_loss={val_loss:.4f} val_acc={val_acc:.4f}", flush=True)
         if val_acc > best_val_acc:
@@ -315,10 +339,12 @@ def main():
             json.dump(history, f, indent=2)
 
     # ---- stage 2: unfreeze everything, continue from global epoch = stage1_epochs ----
+    # (under --single_stage, stage1_epochs=0 so this is really "the whole run",
+    # matching the paper's described single continuous training loop.)
     for p in model.parameters():
         p.requires_grad = True
     optimizer = torch.optim.RMSprop(
-        model.parameters(), lr=args.clr_base_lr if args.lr_strategy == "clr" else lr_for_epoch(args.stage1_epochs),
+        model.parameters(), lr=args.clr_base_lr if args.lr_strategy == "clr" else lr_for_epoch(stage1_epochs),
         weight_decay=args.weight_decay
     )
     clr_scheduler = None
@@ -327,7 +353,7 @@ def main():
             optimizer, base_lr=args.clr_base_lr, max_lr=args.clr_max_lr,
             step_size_up=args.clr_step_size, mode="triangular2", cycle_momentum=False,
         )
-    for epoch in range(args.stage1_epochs, args.stage2_epochs):
+    for epoch in range(stage1_epochs, args.stage2_epochs):
         if args.lr_strategy == "step_decay":
             for g in optimizer.param_groups:
                 g["lr"] = lr_for_epoch(epoch)
@@ -347,9 +373,23 @@ def main():
             torch.save(best_state, out_dir / "best_model.pt")
         with open(out_dir / "history.json", "w") as f:
             json.dump(history, f, indent=2)
-    # official code has no active early stopping (dead-code EarlyStopping,
-    # never passed to fit_generator) -- both stages always run their full
-    # fixed epoch budget; only the best val_accuracy checkpoint is kept.
+
+        # official code has no active early stopping (dead-code EarlyStopping,
+        # never passed to fit_generator) -- this is off by default (patience=None)
+        # to preserve that behavior. Paper Section 3.2.2 says patience=14 on
+        # val_loss was actually applied to produce the headline result --
+        # pass --early_stopping_patience 14 to test that reading.
+        if args.early_stopping_patience is not None:
+            if val_loss < best_val_loss:
+                best_val_loss = val_loss
+                epochs_without_improvement = 0
+            else:
+                epochs_without_improvement += 1
+                if epochs_without_improvement >= args.early_stopping_patience:
+                    print(f"early stopping triggered at epoch {epoch+1} "
+                          f"(no val_loss improvement for {args.early_stopping_patience} epochs)", flush=True)
+                    stopped_early = True
+                    break
 
     model.load_state_dict(best_state)
     torch.save(best_state, out_dir / "best_model.pt")
@@ -392,6 +432,7 @@ def main():
         "classification_report": report,
         "best_val_acc": best_val_acc,
         "stopped_epoch": len(history),
+        "early_stopped": stopped_early,
     }
     with open(out_dir / "test_metrics.json", "w") as f:
         json.dump(metrics, f, indent=2)
